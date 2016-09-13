@@ -1,0 +1,1857 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 9.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       157,          7]
+NotebookDataLength[     71148,       1848]
+NotebookOptionsPosition[     64045,       1607]
+NotebookOutlinePosition[     64402,       1623]
+CellTagsIndexPosition[     64359,       1620]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"<<", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<ComplexFans.m\>\""}], 
+   ")"}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell["Manual By Example", "Title",
+ CellChangeTimes->{{3.6641505025469723`*^9, 3.664150509495633*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["1. Defining a Complex Fan", "Subtitle",
+ CellChangeTimes->{{3.6641505341130238`*^9, 3.664150543200354*^9}, {
+   3.664150650961062*^9, 3.664150660816763*^9}, {3.664150896841508*^9, 
+   3.664150960794745*^9}, {3.664151008947085*^9, 3.664151130210428*^9}, {
+   3.664151181486698*^9, 3.664151331126849*^9}, {3.66415139403297*^9, 
+   3.664151514547584*^9}, {3.66423694549026*^9, 3.664236945739719*^9}, {
+   3.664238014449766*^9, 3.6642380171824207`*^9}, 3.664238141911293*^9, {
+   3.670457987491672*^9, 3.670458010943489*^9}, {3.6704580431272163`*^9, 
+   3.670458044373109*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["1.1 Defining a Complex Fan in parts", "Subsubtitle",
+ CellChangeTimes->{{3.664238157744296*^9, 3.6642381740661592`*^9}, 
+   3.6704575479725523`*^9, 3.670457581911714*^9, 3.670457626694458*^9, {
+   3.670457668446969*^9, 3.670457686582761*^9}, {3.67045774424515*^9, 
+   3.6704577679401817`*^9}, {3.670457932698366*^9, 3.670457987493561*^9}}],
+
+Cell["\<\
+First we define a magnitude interval and an angle interval like follows\
+\>", "Text",
+ CellChangeTimes->{{3.664151524708441*^9, 3.664151553869479*^9}, {
+   3.664236522240691*^9, 3.664236525140152*^9}, {3.664236973177528*^9, 
+   3.664236999076779*^9}, 3.664238003468319*^9, 3.6643260473101053`*^9, 
+   3.670457547974424*^9, 3.67045758191262*^9, 3.670457626695504*^9, {
+   3.6704576684478683`*^9, 3.670457686583767*^9}, {3.670457744246036*^9, 
+   3.670457767941049*^9}, {3.670457932699394*^9, 3.670457987494484*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MagnitudeInterval01", "=", " ", 
+  RowBox[{"INDefine", "[", 
+   RowBox[{
+    RowBox[{"firstExtreme", "\[Rule]", "2"}], ",", 
+    RowBox[{"secondExtreme", "\[Rule]", "4"}], ",", 
+    RowBox[{"feIncluded", "\[Rule]", "\"\<[\>\""}], ",", 
+    RowBox[{"seIncluded", "\[Rule]", "\"\<]\>\""}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6491600938059936`*^9, 3.649160095147596*^9}, 
+   3.649160547096984*^9, 3.664151461553413*^9, {3.664151535691287*^9, 
+   3.6641515719306917`*^9}, {3.6641516212744102`*^9, 3.664151644213851*^9}, {
+   3.664151688782854*^9, 3.664151765723055*^9}, {3.664151857488085*^9, 
+   3.664151862711788*^9}, {3.6643251906187696`*^9, 3.66432519547162*^9}, 
+   3.6643260473108788`*^9, 3.6704575479775543`*^9, 3.670457581913321*^9, 
+   3.6704576266962223`*^9, {3.670457668448571*^9, 3.670457686584499*^9}, {
+   3.670457932700137*^9, 3.670457987495241*^9}}],
+
+Cell[BoxData[
+ RowBox[{"IN", "[", 
+  RowBox[{
+   RowBox[{"FE", "[", "2", "]"}], ",", 
+   RowBox[{"SE", "[", "4", "]"}], ",", 
+   RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+   RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.6641517701022253`*^9, {3.664151849740768*^9, 3.66415186455646*^9}, 
+   3.664237063526676*^9, 3.664238003469473*^9, 3.664325208369397*^9, 
+   3.664326047311775*^9, 3.6647491179816523`*^9, 3.664752726386894*^9, 
+   3.665181500353141*^9, 3.665267845007079*^9, 3.66527189677855*^9, 
+   3.665428820824085*^9, 3.6654313089807987`*^9, 3.665431585307268*^9, 
+   3.665431718388661*^9, 3.665432700358839*^9, 3.665433541343453*^9, 
+   3.6654345900359077`*^9, 3.670457547978345*^9, 3.670457581914097*^9, 
+   3.670457626696986*^9, {3.670457668449497*^9, 3.6704576865853148`*^9}, {
+   3.670457932700953*^9, 3.6704579874960318`*^9}, 3.674429807645995*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AngleInterval01", "=", " ", 
+  RowBox[{"INDefine", "[", 
+   RowBox[{
+    RowBox[{"firstExtreme", "\[Rule]", "0"}], ",", 
+    RowBox[{"secondExtreme", "\[Rule]", "90"}], ",", 
+    RowBox[{"feIncluded", "\[Rule]", "\"\<[\>\""}], ",", 
+    RowBox[{"seIncluded", "\[Rule]", "\"\<]\>\""}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6642370144583883`*^9, 3.6642370457949343`*^9}, 
+   3.664238003470222*^9, {3.664325198553668*^9, 3.664325199141157*^9}, 
+   3.6643260473125563`*^9, 3.670457547979136*^9, 3.670457581914999*^9, 
+   3.670457626697792*^9, {3.6704576684502497`*^9, 3.6704576865860777`*^9}, 
+   3.6704579874967823`*^9}],
+
+Cell[BoxData[
+ RowBox[{"IN", "[", 
+  RowBox[{
+   RowBox[{"FE", "[", "0", "]"}], ",", 
+   RowBox[{"SE", "[", "90", "]"}], ",", 
+   RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+   RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{{3.664237051403976*^9, 3.6642370653054743`*^9}, 
+   3.664238003470986*^9, 3.664325210598678*^9, 3.6643260473134117`*^9, 
+   3.664749119204167*^9, 3.665181504447029*^9, 3.665267847210204*^9, 
+   3.665271898172802*^9, 3.66542882256719*^9, 3.66543131108468*^9, 
+   3.66543158697888*^9, 3.6654317196768093`*^9, 3.665432701801099*^9, 
+   3.665433542810596*^9, 3.6654345914658012`*^9, 3.6704575479798717`*^9, 
+   3.6704575819157248`*^9, 3.670457626698557*^9, {3.670457668451036*^9, 
+   3.6704576865868683`*^9}, 3.670457987497527*^9, 3.6744298088314447`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "With the INDefine function we can define a magnitude interval or an angle \
+interval, this function can be called with from 0 to 4 rules; we need to \
+especify the rule for the first extreme ",
+ StyleBox["firstExtreme",
+  FontWeight->"Bold"],
+ "->",
+ StyleBox["value",
+  FontSlant->"Italic"],
+ ", the rule for the second extreme ",
+ StyleBox["secondExtreme",
+  FontWeight->"Bold"],
+ "->",
+ StyleBox["value",
+  FontSlant->"Italic"],
+ ", the rule to especify if the first extreme is included in the interval ",
+ StyleBox["feIncluded",
+  FontWeight->"Bold"],
+ "->",
+ StyleBox["value",
+  FontSlant->"Italic"],
+ " (with \[OpenCurlyDoubleQuote][\[CloseCurlyDoubleQuote] the extreme is \
+included, with \[OpenCurlyDoubleQuote](\[CloseCurlyDoubleQuote] the extreme \
+is not included) and the rule to especify if the second extreme is included \
+in the interval ",
+ StyleBox["seIncluded",
+  FontWeight->"Bold"],
+ "->",
+ StyleBox["value",
+  FontSlant->"Italic"],
+ " (with \[OpenCurlyDoubleQuote]]\[OpenCurlyDoubleQuote] the extreme is \
+included, with \[OpenCurlyDoubleQuote])\[OpenCurlyDoubleQuote] the extreme is \
+not included).\nIf we do not especify some or all rules, the INDefine \
+function uses a value by default for each missed rule."
+}], "Text",
+ CellChangeTimes->{{3.664151524708441*^9, 3.664151553869479*^9}, {
+   3.6641519099928083`*^9, 3.6641520441076193`*^9}, {3.6641521319368343`*^9, 
+   3.664152509559911*^9}, {3.664152552426255*^9, 3.664152557342615*^9}, {
+   3.664236632163727*^9, 3.6642367110309753`*^9}, {3.66423674663518*^9, 
+   3.6642369147319317`*^9}, {3.664237196811349*^9, 3.664237231115345*^9}, 
+   3.664238003471718*^9, {3.6643249751332617`*^9, 3.6643249809091167`*^9}, {
+   3.664325553146927*^9, 3.664325638260455*^9}, {3.6643258936816177`*^9, 
+   3.6643259289262867`*^9}, 3.66432599092444*^9, 3.6643260473142014`*^9, {
+   3.664326122455634*^9, 3.664326183807444*^9}, {3.664326220706518*^9, 
+   3.6643262569732933`*^9}, {3.664327143388506*^9, 3.664327146114609*^9}, {
+   3.6651816203777323`*^9, 3.66518163142968*^9}, 3.6704575479806137`*^9, 
+   3.670457581916494*^9, 3.6704576266993923`*^9, {3.6704576684517727`*^9, 
+   3.670457686587884*^9}, 3.670457987498249*^9}],
+
+Cell["\<\
+After defining a magnitude interval and an angle interval, we define a \
+complex fan like follows\
+\>", "Text",
+ CellChangeTimes->{{3.664325063399516*^9, 3.66432512205989*^9}, 
+   3.6704575479825706`*^9, {3.670457616056016*^9, 3.670457626700032*^9}, {
+   3.670457668452421*^9, 3.670457686588541*^9}, 3.67045798749897*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ComplexFan01", "=", 
+  RowBox[{"CFDefine", "[", 
+   RowBox[{
+    RowBox[{"magnitudeInterval", "\[Rule]", "MagnitudeInterval01"}], ",", 
+    RowBox[{"angleInterval", "\[Rule]", "AngleInterval01"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.6643250328269453`*^9, 3.6643250431377993`*^9}, {
+   3.664325163575472*^9, 3.664325177072644*^9}, {3.664325224949298*^9, 
+   3.664325288259549*^9}, 3.6704575479851017`*^9, {3.6704576160567102`*^9, 
+   3.670457626700714*^9}, {3.670457668453075*^9, 3.670457686589222*^9}, 
+   3.670457987499639*^9}],
+
+Cell[BoxData[
+ RowBox[{"CF", "[", 
+  RowBox[{
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "2", "]"}], ",", 
+     RowBox[{"SE", "[", "4", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}], ",", 
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "0", "]"}], ",", 
+     RowBox[{"SE", "[", "90", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.664325310425096*^9, 3.664749130126532*^9, 3.6647527352269506`*^9, 
+   3.665181653009816*^9, 3.6652678521792297`*^9, 3.665271903525113*^9, 
+   3.665428827865737*^9, 3.6654313165472116`*^9, 3.665431594485045*^9, 
+   3.665431724834836*^9, 3.665432706627996*^9, 3.665433548818087*^9, 
+   3.665434597120846*^9, 3.6704575479890947`*^9, {3.6704576160574903`*^9, 
+   3.670457626701462*^9}, {3.670457668453806*^9, 3.670457686589979*^9}, 
+   3.670457987500403*^9, 3.674429811265348*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "With the CFDefine function we can define a complex fan, this function can \
+be called with from 0 to 2 rules, one rule of the form ",
+ StyleBox["magnitudeInterval",
+  FontWeight->"Bold"],
+ StyleBox["->value",
+  FontSlant->"Italic"],
+ " to especify the value of the magnitude interval, another rule of the form ",
+ StyleBox["angleInterval",
+  FontWeight->"Bold"],
+ StyleBox["->value",
+  FontSlant->"Italic"],
+ " to especify the value of the angle interval; if we do not especify some or \
+all rules, the CFDefine function uses a value by default for each missed rule."
+}], "Text",
+ CellChangeTimes->{{3.6643253503026123`*^9, 3.664325382874453*^9}, {
+   3.664325425968953*^9, 3.664325492239787*^9}, {3.6643256443251143`*^9, 
+   3.6643257870640907`*^9}, {3.6643258174226007`*^9, 
+   3.6643258910700407`*^9}, {3.664325935528277*^9, 3.664325987498351*^9}, {
+   3.6643271500865307`*^9, 3.664327151440639*^9}, 3.665181691858176*^9, 
+   3.6704575479927197`*^9, {3.670457616058255*^9, 3.670457626702249*^9}, {
+   3.670457668454527*^9, 3.67045768659093*^9}, 3.670457987501156*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["1.2 Defining a Complex fan directly", "Subsubtitle",
+ CellChangeTimes->{{3.664238378463703*^9, 3.664238408319542*^9}, 
+   3.670457887935717*^9, 3.6704579875021143`*^9}],
+
+Cell["We can reach this doing the next", "Text",
+ CellChangeTimes->{{3.664326422471076*^9, 3.6643264339355164`*^9}, 
+   3.670457887936636*^9, 3.670457987503048*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ComplexFan02", "=", 
+  RowBox[{"CFDefine", "[", 
+   RowBox[{
+    RowBox[{"magnitudeInterval", "\[Rule]", 
+     RowBox[{"INDefine", "[", 
+      RowBox[{
+       RowBox[{"firstExtreme", "\[Rule]", "4"}], ",", 
+       RowBox[{"secondExtreme", "\[Rule]", "8"}]}], "]"}]}], ",", 
+    RowBox[{"angleInterval", "\[Rule]", 
+     RowBox[{"INDefine", "[", 
+      RowBox[{
+       RowBox[{"firstExtreme", "\[Rule]", "90"}], ",", 
+       RowBox[{"secondExtreme", "\[Rule]", "160"}]}], "]"}]}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.664326463290099*^9, 3.664326572899516*^9}, {
+   3.664326619373088*^9, 3.664326646953333*^9}, 3.670457887937537*^9, 
+   3.670457987503703*^9}],
+
+Cell[BoxData[
+ RowBox[{"CF", "[", 
+  RowBox[{
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "4", "]"}], ",", 
+     RowBox[{"SE", "[", "8", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}], ",", 
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "90", "]"}], ",", 
+     RowBox[{"SE", "[", "160", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.6643266552566757`*^9, 3.664749133943328*^9, 
+  3.665181707591167*^9, 3.665267856433523*^9, 3.665271910212934*^9, 
+  3.66542883222596*^9, 3.665431326036244*^9, 3.665431601146531*^9, 
+  3.665431729048457*^9, 3.665432711238098*^9, 3.665433556398526*^9, 
+  3.665434600883794*^9, 3.670457887938363*^9, 3.670457987504431*^9, 
+  3.674429821262817*^9}]
+}, Open  ]],
+
+Cell["\<\
+As we can see, we only need to combine all steps from the past section.
+
+In a Complex Fan the first interval always is the magnitude interval and the \
+second interval is the angle interval.\
+\>", "Text",
+ CellChangeTimes->{{3.6643267025247*^9, 3.664326780420269*^9}, {
+   3.664326877923123*^9, 3.664326985405568*^9}, 3.67045788793923*^9, 
+   3.670457987505204*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2. Representations of a Complex Fan", "Subtitle",
+ CellChangeTimes->{{3.6641506383555326`*^9, 3.664150682708988*^9}, {
+  3.664150900552401*^9, 3.6641509011040983`*^9}, {3.664749876154026*^9, 
+  3.664749880863347*^9}}],
+
+Cell["\<\
+When we define a Complex Fan we obtain a Complex Fan in the encapsulated \
+form, and in this form we use a complex fan to perform an operation. But we \
+can obtain a string form of a Complex Fan or plot a Complex Fan too, when we \
+require it.\
+\>", "Text",
+ CellChangeTimes->{{3.66475023431489*^9, 3.664750293393868*^9}, {
+  3.664750429624647*^9, 3.664750527474778*^9}, {3.664750578388291*^9, 
+  3.66475073582827*^9}, {3.6651817867959642`*^9, 3.665181816873446*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["2.1 String form of a Complex Fan", "Subsubtitle",
+ CellChangeTimes->{{3.6647499357623672`*^9, 3.664749967975113*^9}, {
+  3.664750106023119*^9, 3.664750107622561*^9}}],
+
+Cell["\<\
+We can obtain a string representation of a Complex Fan using the function \
+CFStringForm like this\
+\>", "Text",
+ CellChangeTimes->{{3.6647490512792187`*^9, 3.664749067491688*^9}, {
+  3.664749833112505*^9, 3.664749844899151*^9}, {3.664749993259478*^9, 
+  3.6647500458674507`*^9}, {3.664750094966353*^9, 3.664750129174995*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CFStringForm", "[", "ComplexFan01", "]"}]], "Input",
+ CellChangeTimes->{{3.664750048479662*^9, 3.664750081961299*^9}}],
+
+Cell[BoxData["\<\"[2,4] \[RightAngle] [0,90]\"\>"], "Output",
+ CellChangeTimes->{3.6647500845207253`*^9, 3.665181847839059*^9, 
+  3.6744298384947033`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["2.2 Plotting a Complex Fan", "Subsubtitle",
+ CellChangeTimes->{{3.6647499017585087`*^9, 3.6647499271523237`*^9}}],
+
+Cell[TextData[StyleBox["We can plot a Complex Fan using the function CFPlot \
+like follows",
+ FontSize->12]], "Text",
+ CellChangeTimes->{{3.6647490512792187`*^9, 3.664749067491688*^9}, {
+  3.664749833112505*^9, 3.664749844899151*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CFPlot", "[", "ComplexFan01", "]"}]], "Input",
+ CellChangeTimes->{{3.664749032295477*^9, 3.664749033312727*^9}, {
+  3.664749075071871*^9, 3.6647491086433764`*^9}, {3.6647491394446583`*^9, 
+  3.6647491413803883`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   CircleBox[{0, 0}, 2, NCache[{0, 90 Degree}, {0, 1.5707963267948966`}]], 
+   CircleBox[{0, 0}, 4, NCache[{0, 90 Degree}, {0, 1.5707963267948966`}]], 
+   LineBox[{{2, 0}, {4, 0}}], LineBox[{{0, 2}, {0, 4}}]},
+  Axes->True]], "Output",
+ CellChangeTimes->{3.66474914288771*^9, 3.664749607271781*^9, 
+  3.664749703112657*^9, 3.6647498056980267`*^9, 3.665181872627239*^9, 
+  3.674429847920466*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+3. Getting and Setting the encapsulated information in a Complex\
+\>", "Subtitle",
+ CellChangeTimes->{{3.664750822470881*^9, 3.664750872284038*^9}, {
+  3.6647520222621603`*^9, 3.6647520536218767`*^9}, {3.664752096804441*^9, 
+  3.6647520993327227`*^9}}],
+
+Cell["\<\
+Because the information is encapsulated in a Complex Fan we need a way to get \
+and to set that information, to achieve this we need the following getters \
+and setters.\
+\>", "Text",
+ CellChangeTimes->{{3.664752061507373*^9, 3.6647522087859592`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["3.1 Getters", "Subsubtitle",
+ CellChangeTimes->{{3.6647509220183487`*^9, 3.664750926112479*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["ComplexFan01"], "Input",
+ CellChangeTimes->{{3.664752710649165*^9, 3.664752712456061*^9}}],
+
+Cell[BoxData[
+ RowBox[{"CF", "[", 
+  RowBox[{
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "2", "]"}], ",", 
+     RowBox[{"SE", "[", "4", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}], ",", 
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "0", "]"}], ",", 
+     RowBox[{"SE", "[", "90", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.664752713900403*^9, 3.664752746519298*^9, 
+  3.665181912394082*^9, 3.674429857249468*^9}]
+}, Open  ]],
+
+Cell["\<\
+To get encapsulated information of a Complex Fan we can use the following \
+functions.\
+\>", "Text",
+ CellChangeTimes->{{3.664750906562152*^9, 3.664750911127923*^9}, {
+   3.664750970030282*^9, 3.66475102744121*^9}, 3.664751085665391*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CFGetMI", "[", "ComplexFan01", "]"}]], "Input",
+ CellChangeTimes->{{3.664751045834078*^9, 3.664751069777794*^9}}],
+
+Cell[BoxData[
+ RowBox[{"IN", "[", 
+  RowBox[{
+   RowBox[{"FE", "[", "2", "]"}], ",", 
+   RowBox[{"SE", "[", "4", "]"}], ",", 
+   RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+   RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.664751073097723*^9, 3.66518193052212*^9, 
+  3.674429860066222*^9}]
+}, Open  ]],
+
+Cell["\<\
+With the CFGetMI function we can obtain the Magnitude Interval of a Complex \
+Fan.\
+\>", "Text",
+ CellChangeTimes->{{3.664751106000844*^9, 3.664751140040017*^9}, {
+  3.6647512238794327`*^9, 3.664751226714458*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CFGetAI", "[", "ComplexFan01", "]"}]], "Input",
+ CellChangeTimes->{{3.664751143682439*^9, 3.664751159321961*^9}}],
+
+Cell[BoxData[
+ RowBox[{"IN", "[", 
+  RowBox[{
+   RowBox[{"FE", "[", "0", "]"}], ",", 
+   RowBox[{"SE", "[", "90", "]"}], ",", 
+   RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+   RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.664751160762885*^9, 3.665181942134369*^9, 
+  3.6744298619840717`*^9}]
+}, Open  ]],
+
+Cell["\<\
+With the CFGetAI function we can obtain the Angle Interval of a Complex Fan.\
+\>", "Text",
+ CellChangeTimes->{{3.6647511872559767`*^9, 3.664751221787341*^9}}],
+
+Cell["\<\
+Similarly we can obtain the encapsulated information of an Interval with the \
+next functions:
+
+INGetFE - to get the first extreme of an Interval\
+\>", "Text",
+ CellChangeTimes->{{3.664751316718992*^9, 3.664751542222624*^9}, {
+  3.664751643485437*^9, 3.664751649226231*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"INGetFE", "[", "MagnitudeInterval01", "]"}]], "Input",
+ CellChangeTimes->{{3.6647514303108597`*^9, 3.664751441501418*^9}, {
+  3.664751504657192*^9, 3.66475150627249*^9}, {3.664751587900687*^9, 
+  3.6647516233055267`*^9}}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{{3.6647516189189863`*^9, 3.6647516242918873`*^9}, 
+   3.6651819747914457`*^9, 3.674429865240141*^9}]
+}, Open  ]],
+
+Cell["INGetSE - to get the second extreme of an Interval", "Text",
+ CellChangeTimes->{{3.664751663877623*^9, 3.664751683042466*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"INGetSE", "[", "MagnitudeInterval01", "]"}]], "Input",
+ CellChangeTimes->{{3.66475168796457*^9, 3.66475169966956*^9}}],
+
+Cell[BoxData["4"], "Output",
+ CellChangeTimes->{3.664751700902382*^9, 3.665181980971305*^9, 
+  3.674429868190275*^9}]
+}, Open  ]],
+
+Cell["INGetFEI and INGetSEI - to get the limits of an interval", "Text",
+ CellChangeTimes->{{3.664751826341991*^9, 3.6647518571399593`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"INGetFEI", "[", "MagnitudeInterval01", "]"}]], "Input",
+ CellChangeTimes->{{3.664751811257946*^9, 3.664751813609695*^9}, {
+  3.664751863956379*^9, 3.6647518753805237`*^9}}],
+
+Cell[BoxData["\<\"[\"\>"], "Output",
+ CellChangeTimes->{3.6647518765955677`*^9, 3.665181984423051*^9, 
+  3.674429871530856*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"INGetSEI", "[", "MagnitudeInterval01", "]"}]], "Input",
+ CellChangeTimes->{{3.664751878635788*^9, 3.664751890557342*^9}}],
+
+Cell[BoxData["\<\"]\"\>"], "Output",
+ CellChangeTimes->{3.6647518916994963`*^9, 3.665181989043704*^9, 
+  3.6744298728124237`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["3.2 Setters", "Subsubtitle",
+ CellChangeTimes->{{3.664752001123184*^9, 3.6647520065007763`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["ComplexFan01"], "Input",
+ CellChangeTimes->{{3.664752763003674*^9, 3.664752767229939*^9}}],
+
+Cell[BoxData[
+ RowBox[{"CF", "[", 
+  RowBox[{
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "2", "]"}], ",", 
+     RowBox[{"SE", "[", "4", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}], ",", 
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "0", "]"}], ",", 
+     RowBox[{"SE", "[", "90", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.6647527688450823`*^9, 3.665182003827983*^9, 
+  3.674429880629928*^9}]
+}, Open  ]],
+
+Cell["\<\
+To set information in a complex fan we can use the following functions.\
+\>", "Text",
+ CellChangeTimes->{{3.664751983285727*^9, 3.664751987762731*^9}, {
+  3.664752236360484*^9, 3.664752302972681*^9}}],
+
+Cell["\<\
+With the CFSetMI function we can set the magnitude interval of a Complex Fan.\
+\
+\>", "Text",
+ CellChangeTimes->{{3.664752806093602*^9, 3.6647528476285667`*^9}, 
+   3.664753095949472*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MagnitudeInterval02", "=", 
+  RowBox[{"INDefine", "[", 
+   RowBox[{
+    RowBox[{"firstExtreme", "\[Rule]", "5"}], ",", 
+    RowBox[{"secondExtreme", "\[Rule]", "10"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.66475249778638*^9, 3.664752535088176*^9}, {
+  3.664752669003199*^9, 3.664752675552203*^9}}],
+
+Cell[BoxData[
+ RowBox[{"IN", "[", 
+  RowBox[{
+   RowBox[{"FE", "[", "5", "]"}], ",", 
+   RowBox[{"SE", "[", "10", "]"}], ",", 
+   RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+   RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.6647525397400093`*^9, 3.664752677354638*^9, 
+  3.665182020649309*^9, 3.674429882903771*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"CFSetMI", "[", 
+  RowBox[{"ComplexFan01", ",", "MagnitudeInterval02"}], "]"}]], "Input",
+ CellChangeTimes->{{3.664752305827414*^9, 3.664752345506083*^9}, {
+  3.664752437074892*^9, 3.6647524812164087`*^9}, {3.664752549281785*^9, 
+  3.6647525544910803`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["ComplexFan01"], "Input",
+ CellChangeTimes->{{3.6647525811973352`*^9, 3.664752589299672*^9}}],
+
+Cell[BoxData[
+ RowBox[{"CF", "[", 
+  RowBox[{
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "5", "]"}], ",", 
+     RowBox[{"SE", "[", "10", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}], ",", 
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "0", "]"}], ",", 
+     RowBox[{"SE", "[", "90", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.6647525906191893`*^9, 3.664752682393422*^9, {3.6651820646423273`*^9, 
+   3.665182074524207*^9}, 3.6744298875348577`*^9}]
+}, Open  ]],
+
+Cell["\<\
+With the CFSetAI function we can set the angle interval of a Complex Fan.\
+\>", "Text",
+ CellChangeTimes->{{3.664753057085284*^9, 3.664753093079708*^9}, 
+   3.6647532196308603`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"AngleInterval02", "=", 
+  RowBox[{"INDefine", "[", 
+   RowBox[{
+    RowBox[{"firstExtreme", "\[Rule]", "35"}], ",", 
+    RowBox[{"secondExtreme", "\[Rule]", "80"}], ",", 
+    RowBox[{"feIncluded", "\[Rule]", "\"\<(\>\""}], ",", 
+    RowBox[{"seIncluded", "\[Rule]", "\"\<)\>\""}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.664752861279563*^9, 3.664752954797488*^9}}],
+
+Cell[BoxData[
+ RowBox[{"IN", "[", 
+  RowBox[{
+   RowBox[{"FE", "[", "35", "]"}], ",", 
+   RowBox[{"SE", "[", "80", "]"}], ",", 
+   RowBox[{"FEI", "[", "\<\"(\"\>", "]"}], ",", 
+   RowBox[{"SEI", "[", "\<\")\"\>", "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{{3.664752936670411*^9, 3.664752956815743*^9}, 
+   3.665182081983016*^9, 3.674429891686001*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"CFSetAI", "[", 
+  RowBox[{"ComplexFan01", ",", "AngleInterval02"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6647529621860867`*^9, 3.6647529978144703`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["ComplexFan01"], "Input",
+ CellChangeTimes->{{3.664753011678212*^9, 3.6647530134432592`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"CF", "[", 
+  RowBox[{
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "5", "]"}], ",", 
+     RowBox[{"SE", "[", "10", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}], ",", 
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "35", "]"}], ",", 
+     RowBox[{"SE", "[", "80", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"(\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\")\"\>", "]"}]}], "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.664753014693877*^9, 3.66518213327661*^9, 
+  3.6744298978905153`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Simirarly we can set the information in an Interval with the following \
+functions:
+
+INSetFE - To set the first extreme\
+\>", "Text",
+ CellChangeTimes->{{3.664753229196581*^9, 3.664753367070939*^9}, {
+  3.665182161279027*^9, 3.665182166798455*^9}, {3.66518227240001*^9, 
+  3.665182283904291*^9}}],
+
+Cell[BoxData[
+ RowBox[{"INSetFE", "[", 
+  RowBox[{"MagnitudeInterval02", ",", "6"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6651821790775757`*^9, 3.665182219602676*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["MagnitudeInterval02"], "Input",
+ CellChangeTimes->{{3.6651822570614147`*^9, 3.6651822614510107`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"IN", "[", 
+  RowBox[{
+   RowBox[{"FE", "[", "6", "]"}], ",", 
+   RowBox[{"SE", "[", "10", "]"}], ",", 
+   RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+   RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.665182262676298*^9, 3.665182919188772*^9, 
+  3.674429934380598*^9}]
+}, Open  ]],
+
+Cell["INSetSE - To set the first extreme", "Text",
+ CellChangeTimes->{{3.664753229196581*^9, 3.664753367070939*^9}, {
+  3.665182161279027*^9, 3.665182166798455*^9}, {3.66518227240001*^9, 
+  3.665182283904291*^9}, {3.6651829400715523`*^9, 3.6651829440183697`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"INSetSE", "[", 
+  RowBox[{"MagnitudeInterval02", ",", "11"}], "]"}]], "Input",
+ CellChangeTimes->{{3.665182274812615*^9, 3.665182274844997*^9}, {
+  3.665182964232592*^9, 3.6651829863862753`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["MagnitudeInterval02"], "Input",
+ CellChangeTimes->{{3.665182996780298*^9, 3.665182999189548*^9}}],
+
+Cell[BoxData[
+ RowBox[{"IN", "[", 
+  RowBox[{
+   RowBox[{"FE", "[", "6", "]"}], ",", 
+   RowBox[{"SE", "[", "11", "]"}], ",", 
+   RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+   RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.665182999872471*^9, 3.674429938787651*^9}]
+}, Open  ]],
+
+Cell["INSetFEI - To set the limit of the first extreme", "Text",
+ CellChangeTimes->{{3.664753229196581*^9, 3.664753367070939*^9}, {
+  3.665182161279027*^9, 3.665182166798455*^9}, {3.66518227240001*^9, 
+  3.665182283904291*^9}, {3.6651829400715523`*^9, 3.6651829440183697`*^9}, {
+  3.66518301186429*^9, 3.6651830357644167`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"INSetFEI", "[", 
+  RowBox[{"MagnitudeInterval02", ",", "\"\<(\>\""}], "]"}]], "Input",
+ CellChangeTimes->{{3.665183054873826*^9, 3.6651830693032618`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["MagnitudeInterval02"], "Input",
+ CellChangeTimes->{{3.665183074711918*^9, 3.665183076900674*^9}}],
+
+Cell[BoxData[
+ RowBox[{"IN", "[", 
+  RowBox[{
+   RowBox[{"FE", "[", "6", "]"}], ",", 
+   RowBox[{"SE", "[", "11", "]"}], ",", 
+   RowBox[{"FEI", "[", "\<\"(\"\>", "]"}], ",", 
+   RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.665183078305016*^9, 3.674429943020756*^9}]
+}, Open  ]],
+
+Cell["INSetSEI - To set the limit of the second extreme", "Text",
+ CellChangeTimes->{{3.664753229196581*^9, 3.664753367070939*^9}, {
+  3.665182161279027*^9, 3.665182166798455*^9}, {3.66518227240001*^9, 
+  3.665182283904291*^9}, {3.6651829400715523`*^9, 3.6651829440183697`*^9}, {
+  3.66518301186429*^9, 3.6651830357644167`*^9}, {3.665183091807757*^9, 
+  3.6651830971077213`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"INSetSEI", "[", 
+  RowBox[{"MagnitudeInterval02", ",", "\"\<)\>\""}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.665183048147295*^9, {3.665183101437896*^9, 3.665183118101075*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["MagnitudeInterval02"], "Input",
+ CellChangeTimes->{{3.6651831214783907`*^9, 3.665183124109868*^9}}],
+
+Cell[BoxData[
+ RowBox[{"IN", "[", 
+  RowBox[{
+   RowBox[{"FE", "[", "6", "]"}], ",", 
+   RowBox[{"SE", "[", "11", "]"}], ",", 
+   RowBox[{"FEI", "[", "\<\"(\"\>", "]"}], ",", 
+   RowBox[{"SEI", "[", "\<\")\"\>", "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.665183124704262*^9, 3.6744299464027557`*^9}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4. Operations between Complex Fans", "Subtitle",
+ CellChangeTimes->{{3.664150565081109*^9, 3.6641506076992817`*^9}, {
+   3.664150708326923*^9, 3.6641507245347033`*^9}, {3.66415090365718*^9, 
+   3.664150904230481*^9}, 3.664750876273444*^9, 3.665267602289131*^9}],
+
+Cell[CellGroupData[{
+
+Cell["4.1 Negation", "Subsubtitle",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ CellChangeTimes->{{3.665267646892446*^9, 3.665267648361228*^9}, {
+   3.665267734688849*^9, 3.6652677366482067`*^9}, 3.670457840408929*^9}],
+
+Cell["\<\
+We can reach this unary operation with the function CFNegation, this function \
+receives the complex fan that will be negated and returns it.\
+\>", "Text",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ CellChangeTimes->{{3.665267757249859*^9, 3.665267777076432*^9}, {
+   3.665267972231676*^9, 3.6652680889687757`*^9}, 3.670457840409903*^9}],
+
+Cell[BoxData[
+ RowBox[{"ResNeg", "=", 
+  RowBox[{"CFNegation", "[", "ComplexFan01", "]"}]}]], "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ CellChangeTimes->{{3.665267781802044*^9, 3.66526783762927*^9}, {
+   3.6652678676723757`*^9, 3.665267868682293*^9}, {3.665267898990097*^9, 
+   3.665267907954101*^9}, {3.665271731060748*^9, 3.6652717352125874`*^9}, {
+   3.665271818678691*^9, 3.6652718217603292`*^9}, 3.670457840410633*^9}],
+
+Cell[BoxData[
+ RowBox[{"CF", "[", 
+  RowBox[{
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "5", "]"}], ",", 
+     RowBox[{"SE", "[", "10", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}], ",", 
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "215", "]"}], ",", 
+     RowBox[{"SE", "[", "260", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"(\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\")\"\>", "]"}]}], "]"}]}], "]"}]], "Output",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ CellChangeTimes->{3.665267871701771*^9, 3.6652679093923903`*^9, 
+  3.665271742656624*^9, 3.6652718232090807`*^9, 3.670457840411558*^9, 
+  3.67442995834739*^9}],
+
+Cell[BoxData["ComplexFan01"], "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ CellChangeTimes->{{3.665267884825142*^9, 3.665267886049242*^9}, 
+   3.6704578404123487`*^9}],
+
+Cell[BoxData[
+ RowBox[{"CF", "[", 
+  RowBox[{
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "5", "]"}], ",", 
+     RowBox[{"SE", "[", "10", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}], ",", 
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "35", "]"}], ",", 
+     RowBox[{"SE", "[", "80", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"(\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\")\"\>", "]"}]}], "]"}]}], "]"}]], "Output",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.},
+ CellChangeTimes->{{3.665267886805256*^9, 3.665267911548935*^9}, 
+   3.670457840413575*^9, 3.674429960803878*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4.2 Product", "Subsubtitle",
+ CellChangeTimes->{{3.6652679344329042`*^9, 3.6652679399012012`*^9}}],
+
+Cell["\<\
+We can achieve this operation between two Complex Fans with the function \
+CFProduct, it receives two complex fans and returns the resulting complex fan.\
+\>", "Text",
+ CellChangeTimes->{{3.665267957171564*^9, 3.665267967270969*^9}, {
+   3.6652681163985453`*^9, 3.665268190534124*^9}, {3.6652689124601917`*^9, 
+   3.665268955883452*^9}, 3.66526927068486*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ResProd", "=", 
+  RowBox[{"CFProduct", "[", 
+   RowBox[{"ComplexFan01", ",", "ComplexFan02"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.66526794584912*^9, 3.665267947469995*^9}, {
+  3.6652681281501703`*^9, 3.665268133923235*^9}, {3.665268960466942*^9, 
+  3.6652689732536373`*^9}, {3.665269007036429*^9, 3.665269013542624*^9}, {
+  3.665271752218779*^9, 3.66527177948559*^9}}],
+
+Cell[BoxData[
+ RowBox[{"CF", "[", 
+  RowBox[{
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "20", "]"}], ",", 
+     RowBox[{"SE", "[", "80", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}], ",", 
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "125", "]"}], ",", 
+     RowBox[{"SE", "[", "240", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"(\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\")\"\>", "]"}]}], "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.665269017050136*^9, {3.665271767976467*^9, 3.665271780530554*^9}, 
+   3.674430055493705*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CFStringForm", "[", "ComplexFan01", "]"}]], "Input",
+ CellChangeTimes->{{3.665269023772539*^9, 3.665269038634425*^9}}],
+
+Cell[BoxData["\<\"[5,10] \[RightAngle] (35,80)\"\>"], "Output",
+ CellChangeTimes->{{3.665269026590548*^9, 3.665269039947034*^9}, 
+   3.674430057036022*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CFStringForm", "[", "ComplexFan02", "]"}]], "Input",
+ CellChangeTimes->{{3.6652690442480288`*^9, 3.66526905684895*^9}}],
+
+Cell[BoxData["\<\"[4,8] \[RightAngle] [90,160]\"\>"], "Output",
+ CellChangeTimes->{3.66526905837831*^9, 3.6744300584878197`*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4.3 Division", "Subsubtitle",
+ CellChangeTimes->{{3.665269156346554*^9, 3.665269168440404*^9}, {
+  3.6652694366131372`*^9, 3.665269436843875*^9}}],
+
+Cell["\<\
+We can perform this operation between two Complex Fans, with the function \
+CFDivision, it receives two complex fans and returns the resulting complex \
+fan.\
+\>", "Text",
+ CellChangeTimes->{{3.665269209096957*^9, 3.665269238063611*^9}, {
+  3.665269269030509*^9, 3.665269311161375*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ResDiv", "=", 
+  RowBox[{"CFDivision", "[", 
+   RowBox[{"ComplexFan02", ",", "ComplexFan01"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.665269175166687*^9, 3.665269179591107*^9}, {
+  3.665269332045623*^9, 3.665269356700856*^9}, {3.665271786520403*^9, 
+  3.665271790887995*^9}}],
+
+Cell[BoxData[
+ RowBox[{"CF", "[", 
+  RowBox[{
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", 
+      FractionBox["2", "5"], "]"}], ",", 
+     RowBox[{"SE", "[", 
+      FractionBox["8", "5"], "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}], ",", 
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "10", "]"}], ",", 
+     RowBox[{"SE", "[", "125", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"(\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\")\"\>", "]"}]}], "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.6652693591307697`*^9, 3.66527179213022*^9, 
+  3.674430075416238*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CFStringForm", "[", "ComplexFan02", "]"}]], "Input",
+ CellChangeTimes->{{3.6652693661393642`*^9, 3.665269376785693*^9}}],
+
+Cell[BoxData["\<\"[4,8] \[RightAngle] [90,160]\"\>"], "Output",
+ CellChangeTimes->{3.665269378868464*^9, 3.674430078680032*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CFStringForm", "[", "ComplexFan01", "]"}]], "Input",
+ CellChangeTimes->{{3.665269380209828*^9, 3.665269391717708*^9}}],
+
+Cell[BoxData["\<\"[5,10] \[RightAngle] (35,80)\"\>"], "Output",
+ CellChangeTimes->{3.665269392995982*^9, 3.67443007976859*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4.4 Addition", "Subsubtitle",
+ CellChangeTimes->{{3.6652694530834827`*^9, 3.665269458716858*^9}}],
+
+Cell["\<\
+We can make it using the CFAddition function, it receives two complex fans \
+and a flag True or False, to turn on or to turn off debugging. It returns the \
+resulting complex fan.\
+\>", "Text",
+ CellChangeTimes->{{3.665269472795779*^9, 3.665269641773245*^9}, {
+  3.665271671100717*^9, 3.665271671471233*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ResAdd", "=", 
+  RowBox[{"CFAddition", "[", 
+   RowBox[{"ComplexFan01", ",", "ComplexFan02"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6652694638653917`*^9, 3.665269465517712*^9}, {
+   3.66526949991409*^9, 3.665269503036406*^9}, {3.665269654797998*^9, 
+   3.6652696743756857`*^9}, {3.665270621804811*^9, 3.6652706229312687`*^9}, {
+   3.665270952429276*^9, 3.665270954644472*^9}, {3.665271125195882*^9, 
+   3.665271132654908*^9}, {3.665271804049185*^9, 3.665271806557369*^9}, 
+   3.674430091856143*^9}],
+
+Cell[BoxData[
+ RowBox[{"CF", "[", 
+  RowBox[{
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "4.249346131578147`", "]"}], ",", 
+     RowBox[{"SE", "[", "17.93235178335383`", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}], ",", 
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "49.92326599512816`", "]"}], ",", 
+     RowBox[{"SE", "[", "130.95903239385137`", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.6652705626420593`*^9, 3.6652706247221813`*^9, {3.665270934578549*^9, 
+   3.665270976153154*^9}, {3.6652711073285093`*^9, 3.665271134798079*^9}, 
+   3.665271808260171*^9, 3.665433926765325*^9, 3.6654346122122297`*^9, {
+   3.674430086263752*^9, 3.6744300930722933`*^9}}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["4.5 Subtraction", "Subsubtitle",
+ CellChangeTimes->{{3.665271274203702*^9, 3.665271278255053*^9}}],
+
+Cell["\<\
+We can do a subtraction between two complex fans, with the function \
+CFSubtraction, it receives two complex fans and a flag True or False, to turn \
+on or to turn off debugging. It returns the resulting complex fan.\
+\>", "Text",
+ CellChangeTimes->{{3.665271286404811*^9, 3.665271383064025*^9}, {
+  3.665271645318789*^9, 3.6652716603327427`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ResSub", "=", 
+  RowBox[{"CFSubtraction", "[", 
+   RowBox[{"ComplexFan02", ",", "ComplexFan01"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.665271327223922*^9, 3.6652713315628633`*^9}, {
+   3.665271675317725*^9, 3.6652717089724483`*^9}, {3.6652718350079613`*^9, 
+   3.665271857306383*^9}, {3.665431366666581*^9, 3.6654313681092043`*^9}, {
+   3.665431741759184*^9, 3.665431742787558*^9}, {3.6654337184047527`*^9, 
+   3.665433720417693*^9}, 3.674430105005254*^9}],
+
+Cell[BoxData[
+ RowBox[{"CF", "[", 
+  RowBox[{
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "0.8682408883346533`", "]"}], ",", 
+     RowBox[{"SE", "[", "15.99288059782125`", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}], ",", 
+   RowBox[{"IN", "[", 
+    RowBox[{
+     RowBox[{"FE", "[", "105.7625967345481`", "]"}], ",", 
+     RowBox[{"SE", "[", "253.46215707511556`", "]"}], ",", 
+     RowBox[{"FEI", "[", "\<\"[\"\>", "]"}], ",", 
+     RowBox[{"SEI", "[", "\<\"]\"\>", "]"}]}], "]"}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.665432763164899*^9, 3.6654335018728037`*^9, 3.665433573161544*^9, 
+   3.665433638356049*^9, 3.6654337240106773`*^9, 3.665434615113106*^9, {
+   3.674430100691928*^9, 3.674430105711331*^9}}]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["5. Plotting results", "Subtitle",
+ CellChangeTimes->{{3.6641507505584087`*^9, 3.6641507960506372`*^9}, {
+  3.6654339542261457`*^9, 3.665433955129938*^9}}],
+
+Cell["\<\
+Also we can verify the correctness of our results in addition and \
+subtraction, basically the most difficult operations, using the next \
+functions.\
+\>", "Text",
+ CellChangeTimes->{{3.6654339838122*^9, 3.665433999213973*^9}, {
+   3.665434094569542*^9, 3.6654340980073013`*^9}, {3.665434648274288*^9, 
+   3.665434790530952*^9}, 3.66543482302462*^9}],
+
+Cell["\<\
+The CFAdditionPlot function plots the addition of two complex fans, it \
+receives the first operand of the addition, the second operand of the \
+addition and the result of the addition, like next\
+\>", "Text",
+ CellChangeTimes->{{3.665434853280148*^9, 3.665434901616139*^9}, {
+  3.665434969649275*^9, 3.6654351163583193`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CFAdditionPlot", "[", 
+  RowBox[{"ComplexFan01", ",", "ComplexFan02", ",", "ResAdd"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.665271176546857*^9, 3.665271205846405*^9}, {
+  3.6654345744723673`*^9, 3.66543458058715*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   GraphicsBox[{
+     CircleBox[{0, 0}, 5, 
+      NCache[{35 Degree, 80 Degree}, {0.6108652381980153, 
+       1.3962634015954636`}]], 
+     CircleBox[{0, 0}, 10, 
+      NCache[{35 Degree, 80 Degree}, {0.6108652381980153, 
+       1.3962634015954636`}]], 
+     LineBox[NCache[{{5 Cos[35 Degree], 5 Sin[35 Degree]}, {
+        10 Cos[35 Degree], 10 Sin[35 Degree]}}, {{4.095760221444959, 
+       2.8678821817552302`}, {8.191520442889917, 5.7357643635104605`}}]], 
+     LineBox[NCache[{{5 Sin[10 Degree], 5 Cos[10 Degree]}, {
+        10 Sin[10 Degree], 10 Cos[10 Degree]}}, {{0.8682408883346516, 
+       4.92403876506104}, {1.7364817766693033`, 9.84807753012208}}]], 
+     CircleBox[{0, 0}, 4, 
+      NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+       2.792526803190927}]], 
+     CircleBox[{0, 0}, 8, 
+      NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+       2.792526803190927}]], LineBox[{{0, 4}, {0, 8}}], 
+     LineBox[NCache[{{(-4) Cos[20 Degree], 4 Sin[20 Degree]}, {(-8) 
+         Cos[20 Degree], 8 Sin[20 Degree]}}, {{-3.7587704831436337`, 
+       1.3680805733026749`}, {-7.517540966287267, 2.7361611466053497`}}]], 
+     CircleBox[{0, 0}, 4.249346131578147, {0.8713253649639098, 
+      2.285666300498618}], 
+     CircleBox[{0, 0}, 17.93235178335383, {0.8713253649639098, 
+      2.285666300498618}], 
+     LineBox[{{2.7357841382059993`, 3.2515269789898125`}, {11.54508059606094, 
+      13.721528869350182`}}], 
+     LineBox[{{-2.7855281006813843`, 3.209014762551354}, {-11.75500141836761, 
+      13.542126204408554`}}], 
+     {RGBColor[0, 0, 1], Dashing[Tiny], 
+      CircleBox[
+       NCache[{5 Cos[35 Degree], 5 Sin[35 Degree]}, {4.095760221444959, 
+        2.8678821817552302`}], 4, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      CircleBox[
+       NCache[{5 Cos[35 Degree], 5 Sin[35 Degree]}, {4.095760221444959, 
+        2.8678821817552302`}], 8, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      LineBox[NCache[{{5 Cos[35 Degree], 5 Sin[35 Degree]}, {
+         5 Cos[35 Degree], 8 + 5 Sin[35 Degree]}}, {{4.095760221444959, 
+        2.8678821817552302`}, {4.095760221444959, 10.867882181755231`}}]], 
+      LineBox[NCache[{{
+         5 Cos[35 Degree], 5 Sin[35 Degree]}, {(-8) Cos[20 Degree] + 
+          5 Cos[35 Degree], 8 Sin[20 Degree] + 5 Sin[35 Degree]}}, {{
+        4.095760221444959, 2.8678821817552302`}, {-3.4217807448423088`, 
+        5.60404332836058}}]], 
+      CircleBox[
+       NCache[{10 Cos[35 Degree], 10 Sin[35 Degree]}, {8.191520442889917, 
+        5.7357643635104605`}], 4, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      CircleBox[
+       NCache[{10 Cos[35 Degree], 10 Sin[35 Degree]}, {8.191520442889917, 
+        5.7357643635104605`}], 8, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      LineBox[NCache[{{10 Cos[35 Degree], 10 Sin[35 Degree]}, {
+         10 Cos[35 Degree], 8 + 10 Sin[35 Degree]}}, {{8.191520442889917, 
+        5.7357643635104605`}, {8.191520442889917, 13.73576436351046}}]], 
+      LineBox[NCache[{{
+         10 Cos[35 Degree], 10 Sin[35 Degree]}, {(-8) Cos[20 Degree] + 
+          10 Cos[35 Degree], 8 Sin[20 Degree] + 10 Sin[35 Degree]}}, {{
+        8.191520442889917, 5.7357643635104605`}, {0.6739794766026499, 
+        8.47192551011581}}]], 
+      CircleBox[
+       NCache[{5 Sin[10 Degree], 5 Cos[10 Degree]}, {0.8682408883346516, 
+        4.92403876506104}], 4, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      CircleBox[
+       NCache[{5 Sin[10 Degree], 5 Cos[10 Degree]}, {0.8682408883346516, 
+        4.92403876506104}], 8, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      LineBox[NCache[{{5 Sin[10 Degree], 5 Cos[10 Degree]}, {
+         5 Sin[10 Degree], 8 + 5 Cos[10 Degree]}}, {{0.8682408883346516, 
+        4.92403876506104}, {0.8682408883346516, 12.92403876506104}}]], 
+      LineBox[NCache[{{
+         5 Sin[10 Degree], 5 Cos[10 Degree]}, {(-8) Cos[20 Degree] + 
+          5 Sin[10 Degree], 5 Cos[10 Degree] + 8 Sin[20 Degree]}}, {{
+        0.8682408883346516, 4.92403876506104}, {-6.649300077952616, 
+        7.660199911666389}}]], 
+      CircleBox[
+       NCache[{10 Sin[10 Degree], 10 Cos[10 Degree]}, {1.7364817766693033`, 
+        9.84807753012208}], 4, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      CircleBox[
+       NCache[{10 Sin[10 Degree], 10 Cos[10 Degree]}, {1.7364817766693033`, 
+        9.84807753012208}], 8, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      LineBox[NCache[{{10 Sin[10 Degree], 10 Cos[10 Degree]}, {
+         10 Sin[10 Degree], 8 + 10 Cos[10 Degree]}}, {{1.7364817766693033`, 
+        9.84807753012208}, {1.7364817766693033`, 17.84807753012208}}]], 
+      LineBox[NCache[{{
+         10 Sin[10 Degree], 10 Cos[10 Degree]}, {(-8) Cos[20 Degree] + 
+          10 Sin[10 Degree], 10 Cos[10 Degree] + 8 Sin[20 Degree]}}, {{
+        1.7364817766693033`, 9.84807753012208}, {-5.781059189617964, 
+        12.584238676727429`}}]]}},
+    Axes->True,
+    AxesOrigin->{0, 0}], ",", 
+   GraphicsBox[{
+     CircleBox[{0, 0}, 5, 
+      NCache[{35 Degree, 80 Degree}, {0.6108652381980153, 
+       1.3962634015954636`}]], 
+     CircleBox[{0, 0}, 10, 
+      NCache[{35 Degree, 80 Degree}, {0.6108652381980153, 
+       1.3962634015954636`}]], 
+     LineBox[NCache[{{5 Cos[35 Degree], 5 Sin[35 Degree]}, {
+        10 Cos[35 Degree], 10 Sin[35 Degree]}}, {{4.095760221444959, 
+       2.8678821817552302`}, {8.191520442889917, 5.7357643635104605`}}]], 
+     LineBox[NCache[{{5 Sin[10 Degree], 5 Cos[10 Degree]}, {
+        10 Sin[10 Degree], 10 Cos[10 Degree]}}, {{0.8682408883346516, 
+       4.92403876506104}, {1.7364817766693033`, 9.84807753012208}}]], 
+     CircleBox[{0, 0}, 4, 
+      NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+       2.792526803190927}]], 
+     CircleBox[{0, 0}, 8, 
+      NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+       2.792526803190927}]], LineBox[{{0, 4}, {0, 8}}], 
+     LineBox[NCache[{{(-4) Cos[20 Degree], 4 Sin[20 Degree]}, {(-8) 
+         Cos[20 Degree], 8 Sin[20 Degree]}}, {{-3.7587704831436337`, 
+       1.3680805733026749`}, {-7.517540966287267, 2.7361611466053497`}}]], 
+     CircleBox[{0, 0}, 4.249346131578147, {0.8713253649639098, 
+      2.285666300498618}], 
+     CircleBox[{0, 0}, 17.93235178335383, {0.8713253649639098, 
+      2.285666300498618}], 
+     LineBox[{{2.7357841382059993`, 3.2515269789898125`}, {11.54508059606094, 
+      13.721528869350182`}}], 
+     LineBox[{{-2.7855281006813843`, 3.209014762551354}, {-11.75500141836761, 
+      13.542126204408554`}}], 
+     {RGBColor[1, 0, 0], Dashing[Tiny], 
+      CircleBox[{0, 4}, 5, 
+       NCache[{35 Degree, 80 Degree}, {0.6108652381980153, 
+        1.3962634015954636`}]], 
+      CircleBox[{0, 4}, 10, 
+       NCache[{35 Degree, 80 Degree}, {0.6108652381980153, 
+        1.3962634015954636`}]], 
+      LineBox[NCache[{{0, 4}, {10 Cos[35 Degree], 4 + 10 Sin[35 Degree]}}, {{
+         0, 4}, {8.191520442889917, 9.73576436351046}}]], 
+      LineBox[NCache[{{0, 4}, {10 Sin[10 Degree], 4 + 10 Cos[10 Degree]}}, {{
+         0, 4}, {1.7364817766693033`, 13.84807753012208}}]], 
+      CircleBox[{0, 8}, 5, 
+       NCache[{35 Degree, 80 Degree}, {0.6108652381980153, 
+        1.3962634015954636`}]], 
+      CircleBox[{0, 8}, 10, 
+       NCache[{35 Degree, 80 Degree}, {0.6108652381980153, 
+        1.3962634015954636`}]], 
+      LineBox[NCache[{{0, 8}, {10 Cos[35 Degree], 8 + 10 Sin[35 Degree]}}, {{
+         0, 8}, {8.191520442889917, 13.73576436351046}}]], 
+      LineBox[NCache[{{0, 8}, {10 Sin[10 Degree], 8 + 10 Cos[10 Degree]}}, {{
+         0, 8}, {1.7364817766693033`, 17.84807753012208}}]], 
+      CircleBox[
+       NCache[{(-4) Cos[20 Degree], 4 Sin[20 Degree]}, {-3.7587704831436337`, 
+        1.3680805733026749`}], 5, 
+       NCache[{35 Degree, 80 Degree}, {0.6108652381980153, 
+        1.3962634015954636`}]], 
+      CircleBox[
+       NCache[{(-4) Cos[20 Degree], 4 Sin[20 Degree]}, {-3.7587704831436337`, 
+        1.3680805733026749`}], 10, 
+       NCache[{35 Degree, 80 Degree}, {0.6108652381980153, 
+        1.3962634015954636`}]], 
+      LineBox[NCache[{{(-4) Cos[20 Degree], 4 
+          Sin[20 Degree]}, {(-4) Cos[20 Degree] + 10 Cos[35 Degree], 
+          4 Sin[20 Degree] + 10 Sin[35 Degree]}}, {{-3.7587704831436337`, 
+        1.3680805733026749`}, {4.432749959746284, 7.103844936813135}}]], 
+      LineBox[NCache[{{(-4) Cos[20 Degree], 4 
+          Sin[20 Degree]}, {(-4) Cos[20 Degree] + 10 Sin[10 Degree], 
+          10 Cos[10 Degree] + 4 Sin[20 Degree]}}, {{-3.7587704831436337`, 
+        1.3680805733026749`}, {-2.0222887064743302`, 11.216158103424755`}}]], 
+      CircleBox[
+       NCache[{(-8) Cos[20 Degree], 8 Sin[20 Degree]}, {-7.517540966287267, 
+        2.7361611466053497`}], 5, 
+       NCache[{35 Degree, 80 Degree}, {0.6108652381980153, 
+        1.3962634015954636`}]], 
+      CircleBox[
+       NCache[{(-8) Cos[20 Degree], 8 Sin[20 Degree]}, {-7.517540966287267, 
+        2.7361611466053497`}], 10, 
+       NCache[{35 Degree, 80 Degree}, {0.6108652381980153, 
+        1.3962634015954636`}]], 
+      LineBox[NCache[{{(-8) Cos[20 Degree], 8 
+          Sin[20 Degree]}, {(-8) Cos[20 Degree] + 10 Cos[35 Degree], 
+          8 Sin[20 Degree] + 10 Sin[35 Degree]}}, {{-7.517540966287267, 
+        2.7361611466053497`}, {0.6739794766026499, 8.47192551011581}}]], 
+      LineBox[NCache[{{(-8) Cos[20 Degree], 8 
+          Sin[20 Degree]}, {(-8) Cos[20 Degree] + 10 Sin[10 Degree], 
+          10 Cos[10 Degree] + 8 Sin[20 Degree]}}, {{-7.517540966287267, 
+        2.7361611466053497`}, {-5.781059189617964, 12.584238676727429`}}]]}},
+    Axes->True,
+    AxesOrigin->{0, 0}]}], "}"}]], "Output",
+ CellChangeTimes->{3.665271209081935*^9, 3.6654346236575937`*^9, 
+  3.674430119684819*^9}]
+}, Open  ]],
+
+Cell["\<\
+The CFSubtractionPlot function plots the subtraction of two complex fans, it \
+receives the first operand of the subtraction, the second operand of the \
+subtraction and the result of the subtraction, like follows\
+\>", "Text",
+ CellChangeTimes->{{3.665435136496292*^9, 3.665435183757674*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"CFSubtractionPlot", "[", 
+  RowBox[{"ComplexFan02", ",", "ComplexFan01", ",", "ResSub"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.665433012617437*^9, 3.6654330874691467`*^9}, {
+  3.6654332963151083`*^9, 3.6654333071008797`*^9}, {3.665433343421055*^9, 
+  3.665433359448329*^9}, {3.6654345387402153`*^9, 3.66543455221085*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   GraphicsBox[{
+     CircleBox[{0, 0}, 4, 
+      NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+       2.792526803190927}]], 
+     CircleBox[{0, 0}, 8, 
+      NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+       2.792526803190927}]], LineBox[{{0, 4}, {0, 8}}], 
+     LineBox[NCache[{{(-4) Cos[20 Degree], 4 Sin[20 Degree]}, {(-8) 
+         Cos[20 Degree], 8 Sin[20 Degree]}}, {{-3.7587704831436337`, 
+       1.3680805733026749`}, {-7.517540966287267, 2.7361611466053497`}}]], 
+     CircleBox[{0, 0}, 5, 
+      NCache[{215 Degree, 260 Degree}, {3.7524578917878086`, 
+       4.537856055185257}]], 
+     CircleBox[{0, 0}, 10, 
+      NCache[{215 Degree, 260 Degree}, {3.7524578917878086`, 
+       4.537856055185257}]], 
+     LineBox[NCache[{{(-5) Cos[35 Degree], (-5) Sin[35 Degree]}, {(-10) 
+         Cos[35 Degree], (-10) 
+         Sin[35 Degree]}}, {{-4.095760221444959, -2.8678821817552302`}, \
+{-8.191520442889917, -5.7357643635104605`}}]], 
+     LineBox[NCache[{{(-5) Sin[10 Degree], (-5) Cos[10 Degree]}, {(-10) 
+         Sin[10 Degree], (-10) 
+         Cos[10 Degree]}}, {{-0.8682408883346516, -4.92403876506104}, \
+{-1.7364817766693033`, -9.84807753012208}}]], 
+     CircleBox[{0, 0}, 0.8682408883346533, {1.8459055384768674`, 
+      4.423749170167807}], 
+     CircleBox[{0, 0}, 15.99288059782125, {1.8459055384768674`, 
+      4.423749170167807}], 
+     LineBox[{{-0.23585941148918751`, 
+      0.8355911549245372}, {-4.344498694428066, 15.391476891782679`}}], 
+     LineBox[{{-0.2471435250704422, -0.8323234456579387}, \
+{-4.552350551651013, -15.331286125796822`}}], 
+     {RGBColor[0, 0, 1], Dashing[Tiny], 
+      CircleBox[{0, 4}, 5, 
+       NCache[{215 Degree, 260 Degree}, {3.7524578917878086`, 
+        4.537856055185257}]], 
+      CircleBox[{0, 4}, 10, 
+       NCache[{215 Degree, 260 Degree}, {3.7524578917878086`, 
+        4.537856055185257}]], 
+      LineBox[NCache[{{0, 
+         4}, {(-10) Cos[35 Degree], 4 - 10 Sin[35 Degree]}}, {{0, 
+         4}, {-8.191520442889917, -1.7357643635104605`}}]], 
+      LineBox[NCache[{{0, 
+         4}, {(-10) Sin[10 Degree], 4 - 10 Cos[10 Degree]}}, {{0, 
+         4}, {-1.7364817766693033`, -5.8480775301220795`}}]], 
+      CircleBox[{0, 8}, 5, 
+       NCache[{215 Degree, 260 Degree}, {3.7524578917878086`, 
+        4.537856055185257}]], 
+      CircleBox[{0, 8}, 10, 
+       NCache[{215 Degree, 260 Degree}, {3.7524578917878086`, 
+        4.537856055185257}]], 
+      LineBox[NCache[{{0, 
+         8}, {(-10) Cos[35 Degree], 8 - 10 Sin[35 Degree]}}, {{0, 
+         8}, {-8.191520442889917, 2.2642356364895395`}}]], 
+      LineBox[NCache[{{0, 
+         8}, {(-10) Sin[10 Degree], 8 - 10 Cos[10 Degree]}}, {{0, 
+         8}, {-1.7364817766693033`, -1.8480775301220795`}}]], 
+      CircleBox[
+       NCache[{(-4) Cos[20 Degree], 4 Sin[20 Degree]}, {-3.7587704831436337`, 
+        1.3680805733026749`}], 5, 
+       NCache[{215 Degree, 260 Degree}, {3.7524578917878086`, 
+        4.537856055185257}]], 
+      CircleBox[
+       NCache[{(-4) Cos[20 Degree], 4 Sin[20 Degree]}, {-3.7587704831436337`, 
+        1.3680805733026749`}], 10, 
+       NCache[{215 Degree, 260 Degree}, {3.7524578917878086`, 
+        4.537856055185257}]], 
+      LineBox[NCache[{{(-4) Cos[20 Degree], 4 
+          Sin[20 Degree]}, {(-4) Cos[20 Degree] - 10 Cos[35 Degree], 
+          4 Sin[20 Degree] - 10 Sin[35 Degree]}}, {{-3.7587704831436337`, 
+        1.3680805733026749`}, {-11.950290926033551`, -4.367683790207786}}]], 
+      LineBox[NCache[{{(-4) Cos[20 Degree], 4 
+          Sin[20 Degree]}, {(-4) Cos[20 Degree] - 10 
+          Sin[10 Degree], (-10) Cos[10 Degree] + 
+          4 Sin[20 Degree]}}, {{-3.7587704831436337`, 
+        1.3680805733026749`}, {-5.495252259812937, -8.479996956819404}}]], 
+      CircleBox[
+       NCache[{(-8) Cos[20 Degree], 8 Sin[20 Degree]}, {-7.517540966287267, 
+        2.7361611466053497`}], 5, 
+       NCache[{215 Degree, 260 Degree}, {3.7524578917878086`, 
+        4.537856055185257}]], 
+      CircleBox[
+       NCache[{(-8) Cos[20 Degree], 8 Sin[20 Degree]}, {-7.517540966287267, 
+        2.7361611466053497`}], 10, 
+       NCache[{215 Degree, 260 Degree}, {3.7524578917878086`, 
+        4.537856055185257}]], 
+      LineBox[NCache[{{(-8) Cos[20 Degree], 8 
+          Sin[20 Degree]}, {(-8) Cos[20 Degree] - 10 Cos[35 Degree], 
+          8 Sin[20 Degree] - 10 Sin[35 Degree]}}, {{-7.517540966287267, 
+        2.7361611466053497`}, {-15.709061409177185`, -2.999603216905111}}]], 
+      LineBox[NCache[{{(-8) Cos[20 Degree], 8 
+          Sin[20 Degree]}, {(-8) Cos[20 Degree] - 10 
+          Sin[10 Degree], (-10) Cos[10 Degree] + 
+          8 Sin[20 Degree]}}, {{-7.517540966287267, 
+        2.7361611466053497`}, {-9.25402274295657, -7.11191638351673}}]]}},
+    Axes->True,
+    AxesOrigin->{0, 0}], ",", 
+   GraphicsBox[{
+     CircleBox[{0, 0}, 4, 
+      NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+       2.792526803190927}]], 
+     CircleBox[{0, 0}, 8, 
+      NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+       2.792526803190927}]], LineBox[{{0, 4}, {0, 8}}], 
+     LineBox[NCache[{{(-4) Cos[20 Degree], 4 Sin[20 Degree]}, {(-8) 
+         Cos[20 Degree], 8 Sin[20 Degree]}}, {{-3.7587704831436337`, 
+       1.3680805733026749`}, {-7.517540966287267, 2.7361611466053497`}}]], 
+     CircleBox[{0, 0}, 5, 
+      NCache[{215 Degree, 260 Degree}, {3.7524578917878086`, 
+       4.537856055185257}]], 
+     CircleBox[{0, 0}, 10, 
+      NCache[{215 Degree, 260 Degree}, {3.7524578917878086`, 
+       4.537856055185257}]], 
+     LineBox[NCache[{{(-5) Cos[35 Degree], (-5) Sin[35 Degree]}, {(-10) 
+         Cos[35 Degree], (-10) 
+         Sin[35 Degree]}}, {{-4.095760221444959, -2.8678821817552302`}, \
+{-8.191520442889917, -5.7357643635104605`}}]], 
+     LineBox[NCache[{{(-5) Sin[10 Degree], (-5) Cos[10 Degree]}, {(-10) 
+         Sin[10 Degree], (-10) 
+         Cos[10 Degree]}}, {{-0.8682408883346516, -4.92403876506104}, \
+{-1.7364817766693033`, -9.84807753012208}}]], 
+     CircleBox[{0, 0}, 0.8682408883346533, {1.8459055384768674`, 
+      4.423749170167807}], 
+     CircleBox[{0, 0}, 15.99288059782125, {1.8459055384768674`, 
+      4.423749170167807}], 
+     LineBox[{{-0.23585941148918751`, 
+      0.8355911549245372}, {-4.344498694428066, 15.391476891782679`}}], 
+     LineBox[{{-0.2471435250704422, -0.8323234456579387}, \
+{-4.552350551651013, -15.331286125796822`}}], 
+     {RGBColor[1, 0, 0], Dashing[Tiny], 
+      CircleBox[
+       NCache[{(-5) Cos[35 Degree], (-5) 
+         Sin[35 Degree]}, {-4.095760221444959, -2.8678821817552302`}], 4, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      CircleBox[
+       NCache[{(-5) Cos[35 Degree], (-5) 
+         Sin[35 Degree]}, {-4.095760221444959, -2.8678821817552302`}], 8, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      LineBox[NCache[{{(-5) Cos[35 Degree], (-5) Sin[35 Degree]}, {(-5) 
+          Cos[35 Degree], 8 - 5 
+          Sin[35 Degree]}}, {{-4.095760221444959, -2.8678821817552302`}, \
+{-4.095760221444959, 5.13211781824477}}]], 
+      LineBox[NCache[{{(-5) Cos[35 Degree], (-5) 
+          Sin[35 Degree]}, {(-8) Cos[20 Degree] - 5 Cos[35 Degree], 
+          8 Sin[20 Degree] - 5 
+          Sin[35 Degree]}}, {{-4.095760221444959, -2.8678821817552302`}, \
+{-11.613301187732226`, -0.13172103514988054`}}]], 
+      CircleBox[
+       NCache[{(-10) Cos[35 Degree], (-10) 
+         Sin[35 Degree]}, {-8.191520442889917, -5.7357643635104605`}], 4, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      CircleBox[
+       NCache[{(-10) Cos[35 Degree], (-10) 
+         Sin[35 Degree]}, {-8.191520442889917, -5.7357643635104605`}], 8, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      LineBox[NCache[{{(-10) Cos[35 Degree], (-10) Sin[35 Degree]}, {(-10) 
+          Cos[35 Degree], 8 - 10 
+          Sin[35 Degree]}}, {{-8.191520442889917, -5.7357643635104605`}, \
+{-8.191520442889917, 2.2642356364895395`}}]], 
+      LineBox[NCache[{{(-10) Cos[35 Degree], (-10) 
+          Sin[35 Degree]}, {(-8) Cos[20 Degree] - 10 Cos[35 Degree], 
+          8 Sin[20 Degree] - 10 
+          Sin[35 Degree]}}, {{-8.191520442889917, -5.7357643635104605`}, \
+{-15.709061409177185`, -2.999603216905111}}]], 
+      CircleBox[
+       NCache[{(-5) Sin[10 Degree], (-5) 
+         Cos[10 Degree]}, {-0.8682408883346516, -4.92403876506104}], 4, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      CircleBox[
+       NCache[{(-5) Sin[10 Degree], (-5) 
+         Cos[10 Degree]}, {-0.8682408883346516, -4.92403876506104}], 8, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      LineBox[
+       NCache[{{(-5) Sin[10 Degree], (-5) Cos[10 Degree]}, {(-5) 
+          Sin[10 Degree], 8 - 5 
+          Cos[10 Degree]}}, {{-0.8682408883346516, -4.92403876506104}, \
+{-0.8682408883346516, 3.0759612349389602`}}]], 
+      LineBox[NCache[{{(-5) Sin[10 Degree], (-5) 
+          Cos[10 Degree]}, {(-8) Cos[20 Degree] - 5 
+          Sin[10 Degree], (-5) Cos[10 Degree] + 
+          8 Sin[20 
+             Degree]}}, {{-0.8682408883346516, -4.92403876506104}, \
+{-8.38578185462192, -2.18787761845569}}]], 
+      CircleBox[
+       NCache[{(-10) Sin[10 Degree], (-10) 
+         Cos[10 Degree]}, {-1.7364817766693033`, -9.84807753012208}], 4, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      CircleBox[
+       NCache[{(-10) Sin[10 Degree], (-10) 
+         Cos[10 Degree]}, {-1.7364817766693033`, -9.84807753012208}], 8, 
+       NCache[{90 Degree, 160 Degree}, {1.5707963267948966`, 
+        2.792526803190927}]], 
+      LineBox[NCache[{{(-10) Sin[10 Degree], (-10) Cos[10 Degree]}, {(-10) 
+          Sin[10 Degree], 8 - 10 
+          Cos[10 Degree]}}, {{-1.7364817766693033`, -9.84807753012208}, \
+{-1.7364817766693033`, -1.8480775301220795`}}]], 
+      LineBox[NCache[{{(-10) Sin[10 Degree], (-10) 
+          Cos[10 Degree]}, {(-8) Cos[20 Degree] - 10 
+          Sin[10 Degree], (-10) Cos[10 Degree] + 
+          8 Sin[20 
+             Degree]}}, {{-1.7364817766693033`, -9.84807753012208}, \
+{-9.25402274295657, -7.11191638351673}}]]}},
+    Axes->True,
+    AxesOrigin->{0, 0}]}], "}"}]], "Output",
+ CellChangeTimes->{3.665433089332802*^9, 3.665433312777123*^9, 
+  3.665433360807551*^9, 3.665433728462594*^9, 3.665434627481439*^9, 
+  3.674430132159349*^9}]
+}, Open  ]],
+
+Cell["\<\
+You can notice that the CFSubtractionPlot only plots the addition of the \
+first operand of the subtraction and the negated second operand of the \
+subtraction.\
+\>", "Text",
+ CellChangeTimes->{{3.665435298176017*^9, 3.66543541001956*^9}, {
+  3.665435471612133*^9, 3.6654354725073433`*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+CellGrouping->Manual,
+WindowSize->{1301, 744},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"9.0 for Linux x86 (64-bit) (February 7, 2013)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[557, 20, 158, 5, 32, "Input"],
+Cell[CellGroupData[{
+Cell[740, 29, 102, 1, 93, "Title"],
+Cell[CellGroupData[{
+Cell[867, 34, 579, 8, 51, "Subtitle"],
+Cell[CellGroupData[{
+Cell[1471, 46, 345, 4, 31, "Subsubtitle"],
+Cell[1819, 52, 524, 8, 31, "Text"],
+Cell[CellGroupData[{
+Cell[2368, 64, 893, 15, 32, "Input"],
+Cell[3264, 81, 902, 16, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4203, 102, 647, 12, 32, "Input"],
+Cell[4853, 116, 809, 14, 32, "Output"]
+}, Open  ]],
+Cell[5677, 133, 2203, 47, 111, "Text"],
+Cell[7883, 182, 331, 6, 31, "Text"],
+Cell[CellGroupData[{
+Cell[8239, 192, 563, 11, 32, "Input"],
+Cell[8805, 205, 1023, 22, 32, "Output"]
+}, Open  ]],
+Cell[9843, 230, 1088, 21, 71, "Text"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10968, 256, 174, 2, 31, "Subsubtitle"],
+Cell[11145, 260, 164, 2, 31, "Text"],
+Cell[CellGroupData[{
+Cell[11334, 266, 692, 17, 55, "Input"],
+Cell[12029, 285, 890, 20, 32, "Output"]
+}, Open  ]],
+Cell[12934, 308, 375, 8, 71, "Text"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13358, 322, 223, 3, 51, "Subtitle"],
+Cell[13584, 327, 477, 8, 51, "Text"],
+Cell[CellGroupData[{
+Cell[14086, 339, 172, 2, 31, "Subsubtitle"],
+Cell[14261, 343, 336, 6, 31, "Text"],
+Cell[CellGroupData[{
+Cell[14622, 353, 142, 2, 32, "Input"],
+Cell[14767, 357, 154, 2, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14970, 365, 119, 1, 31, "Subsubtitle"],
+Cell[15092, 368, 234, 4, 29, "Text"],
+Cell[CellGroupData[{
+Cell[15351, 376, 240, 4, 32, "Input"],
+Cell[15594, 382, 423, 8, 381, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16078, 397, 262, 5, 51, "Subtitle"],
+Cell[16343, 404, 261, 5, 31, "Text"],
+Cell[CellGroupData[{
+Cell[16629, 413, 102, 1, 31, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[16756, 418, 104, 1, 32, "Input"],
+Cell[16863, 421, 633, 16, 32, "Output"]
+}, Open  ]],
+Cell[17511, 440, 247, 5, 31, "Text"],
+Cell[CellGroupData[{
+Cell[17783, 449, 137, 2, 32, "Input"],
+Cell[17923, 453, 325, 8, 32, "Output"]
+}, Open  ]],
+Cell[18263, 464, 223, 5, 31, "Text"],
+Cell[CellGroupData[{
+Cell[18511, 473, 137, 2, 32, "Input"],
+Cell[18651, 477, 329, 8, 32, "Output"]
+}, Open  ]],
+Cell[18995, 488, 168, 3, 31, "Text"],
+Cell[19166, 493, 284, 7, 71, "Text"],
+Cell[CellGroupData[{
+Cell[19475, 504, 245, 4, 32, "Input"],
+Cell[19723, 510, 148, 2, 32, "Output"]
+}, Open  ]],
+Cell[19886, 515, 132, 1, 31, "Text"],
+Cell[CellGroupData[{
+Cell[20043, 520, 142, 2, 32, "Input"],
+Cell[20188, 524, 117, 2, 32, "Output"]
+}, Open  ]],
+Cell[20320, 529, 140, 1, 31, "Text"],
+Cell[CellGroupData[{
+Cell[20485, 534, 196, 3, 32, "Input"],
+Cell[20684, 539, 127, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20848, 546, 145, 2, 32, "Input"],
+Cell[20996, 550, 129, 2, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21174, 558, 102, 1, 31, "Subsubtitle"],
+Cell[CellGroupData[{
+Cell[21301, 563, 104, 1, 32, "Input"],
+Cell[21408, 566, 613, 16, 32, "Output"]
+}, Open  ]],
+Cell[22036, 585, 210, 4, 31, "Text"],
+Cell[22249, 591, 197, 5, 31, "Text"],
+Cell[CellGroupData[{
+Cell[22471, 600, 326, 7, 32, "Input"],
+Cell[22800, 609, 351, 8, 32, "Output"]
+}, Open  ]],
+Cell[23166, 620, 280, 5, 32, "Input"],
+Cell[CellGroupData[{
+Cell[23471, 629, 106, 1, 32, "Input"],
+Cell[23580, 632, 668, 17, 32, "Output"]
+}, Open  ]],
+Cell[24263, 652, 191, 4, 31, "Text"],
+Cell[CellGroupData[{
+Cell[24479, 660, 391, 8, 32, "Input"],
+Cell[24873, 670, 353, 8, 32, "Output"]
+}, Open  ]],
+Cell[25241, 681, 178, 3, 32, "Input"],
+Cell[CellGroupData[{
+Cell[25444, 688, 106, 1, 32, "Input"],
+Cell[25553, 691, 614, 16, 32, "Output"]
+}, Open  ]],
+Cell[26182, 710, 306, 8, 71, "Text"],
+Cell[26491, 720, 169, 3, 32, "Input"],
+Cell[CellGroupData[{
+Cell[26685, 727, 115, 1, 32, "Input"],
+Cell[26803, 730, 327, 8, 32, "Output"]
+}, Open  ]],
+Cell[27145, 741, 263, 3, 31, "Text"],
+Cell[27411, 746, 219, 4, 32, "Input"],
+Cell[CellGroupData[{
+Cell[27655, 754, 111, 1, 32, "Input"],
+Cell[27769, 757, 302, 7, 32, "Output"]
+}, Open  ]],
+Cell[28086, 767, 327, 4, 31, "Text"],
+Cell[28416, 773, 178, 3, 32, "Input"],
+Cell[CellGroupData[{
+Cell[28619, 780, 111, 1, 32, "Input"],
+Cell[28733, 783, 302, 7, 32, "Output"]
+}, Open  ]],
+Cell[29050, 793, 379, 5, 31, "Text"],
+Cell[29432, 800, 201, 4, 32, "Input"],
+Cell[CellGroupData[{
+Cell[29658, 808, 113, 1, 32, "Input"],
+Cell[29774, 811, 304, 7, 32, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30139, 825, 267, 3, 51, "Subtitle"],
+Cell[CellGroupData[{
+Cell[30431, 832, 228, 3, 31, "Subsubtitle",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.}],
+Cell[30662, 837, 358, 6, 31, "Text",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.}],
+Cell[31023, 845, 444, 7, 32, "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.}],
+Cell[31470, 854, 740, 18, 32, "Output",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.}],
+Cell[32213, 874, 185, 3, 32, "Input",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.}],
+Cell[32401, 879, 691, 17, 32, "Output",
+ CellGroupingRules->{GroupTogetherGrouping, 10000.}]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33129, 901, 104, 1, 31, "Subsubtitle"],
+Cell[33236, 904, 368, 6, 31, "Text"],
+Cell[CellGroupData[{
+Cell[33629, 914, 398, 7, 32, "Input"],
+Cell[34030, 923, 644, 17, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34711, 945, 142, 2, 32, "Input"],
+Cell[34856, 949, 155, 2, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35048, 956, 143, 2, 32, "Input"],
+Cell[35194, 960, 128, 1, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35371, 967, 152, 2, 31, "Subsubtitle"],
+Cell[35526, 971, 296, 6, 31, "Text"],
+Cell[CellGroupData[{
+Cell[35847, 981, 301, 6, 32, "Input"],
+Cell[36151, 989, 664, 18, 49, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36852, 1012, 144, 2, 32, "Input"],
+Cell[36999, 1016, 127, 1, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37163, 1022, 142, 2, 32, "Input"],
+Cell[37308, 1026, 126, 1, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37483, 1033, 103, 1, 31, "Subsubtitle"],
+Cell[37589, 1036, 318, 6, 51, "Text"],
+Cell[CellGroupData[{
+Cell[37932, 1046, 526, 9, 32, "Input"],
+Cell[38461, 1057, 883, 19, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39393, 1082, 104, 1, 31, "Subsubtitle"],
+Cell[39500, 1085, 357, 6, 51, "Text"],
+Cell[CellGroupData[{
+Cell[39882, 1095, 484, 8, 32, "Input"],
+Cell[40369, 1105, 804, 18, 32, "Output"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41234, 1130, 160, 2, 51, "Subtitle"],
+Cell[41397, 1134, 360, 7, 31, "Text"],
+Cell[41760, 1143, 336, 6, 51, "Text"],
+Cell[CellGroupData[{
+Cell[42121, 1153, 246, 5, 32, "Input"],
+Cell[42370, 1160, 10082, 198, 171, "Output"]
+}, Open  ]],
+Cell[52467, 1361, 303, 5, 51, "Text"],
+Cell[CellGroupData[{
+Cell[52795, 1370, 350, 6, 32, "Input"],
+Cell[53148, 1378, 10554, 216, 233, "Output"]
+}, Open  ]],
+Cell[63717, 1597, 300, 6, 31, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

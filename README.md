@@ -1,0 +1,5 @@
+# A vector can be represented in two ways, rectangular and polar form. There vector applications where it makes more sense to speak of a vector represented in polar form rather than its rectangular form, for example, in electrical engineering, phasors, which are a type of vector represented in polar form, are used to solve linear circuits in sinusoidal steady state.
+
+# But what if working with uncertainties, that is, if a phasor, for example, instead of having a value for the magnitude and a value for angle has a range of values for the magnitude and a range of values for angle, if we drew this kind of phasor, the resulting object would be a semi-circular object, like a fan, in "Complex Fans: A Representation for Vectors in Polar Form with Interval Attributes" call this object Complex Fan and algorithms are proposed to perform arithmetic operations on them.
+
+# In this implementation the algorithms proposed in "Complex Fans: A Representation for Vectors in Polar Form with Interval Attributes" along with additional functions to the algorithms can function were implemented.
